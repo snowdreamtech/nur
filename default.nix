@@ -1,18 +1,24 @@
 # snowdreamtech NUR repository
+# https://github.com/nix-community/NUR
+#
 # This file defines the package set exposed by this NUR repo.
+# GoReleaser will automatically update pkgs/unirtm/default.nix on each release.
 { pkgs ? import <nixpkgs> {} }:
 
 {
-  # Package modules
-  modules = import ./modules;
+  # Individual packages (GoReleaser manages pkgs/unirtm/default.nix)
+  unirtm = pkgs.callPackage ./pkgs/unirtm {};
 
-  # Overlay for use in nixpkgs overlays
-  overlay = final: prev: {
-    snowdreamtech = {
-      unirtm = prev.callPackage ./pkgs/unirtm {};
-    };
+  # NixOS modules
+  modules = {
+    # Add NixOS modules here as attribute-to-path mappings
+    # example = ./modules/example.nix;
   };
 
-  # Individual packages
-  unirtm = pkgs.callPackage ./pkgs/unirtm {};
+  # Overlays
+  overlays = {
+    snowdreamtech = final: prev: {
+      snowdreamtech-unirtm = final.callPackage ./pkgs/unirtm {};
+    };
+  };
 }

@@ -6,8 +6,8 @@ Personal [NUR](https://github.com/nix-community/NUR) repository for [snowdreamte
 
 ## Available Packages
 
-| Package | Description |
-|---------|-------------|
+| Package                           | Description                                                                         |
+| --------------------------------- | ----------------------------------------------------------------------------------- |
 | [unirtm](pkgs/unirtm/default.nix) | UniRTM (Uni Runtime and Tools Manager) — cross-platform developer toolchain manager |
 
 ## Usage
