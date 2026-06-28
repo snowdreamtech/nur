@@ -9,21 +9,21 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    i686-linux = "0679h93jsrz5rb9likcskwdi3c9m6ri4fl855sqc09lwpdcmi5sj";
-    x86_64-linux = "1wdmsczcy4wr40nki542kygijdvji80l5kxlhn7ra2r2s59vv1gg";
-    armv7l-linux = "0mrl33sk8306lf46884mxxpj84nx7cqfilf3zwgbw34ibykdj19h";
-    aarch64-linux = "064f4lsdxkf27zl52jnjl4rrdnxw2y48ys0ibx2d9g75nzbg34nr";
-    x86_64-darwin = "0yg543fm78s3nv76ga31f5cip47xp8jab9v89n10j9wqnfwm7vvx";
-    aarch64-darwin = "03k96fx37x2kyl9pvk7c50sb52hr0sj06mf5i5fp0jl9b2cdxrds";
+    i686-linux = "0ki9yd0p2f1a2cpfm8mlf53n1s5l9l0xqmdg5p7wjgvlv7cwiwjl";
+    x86_64-linux = "1kiap1rc9d4igsh7qv6z8s18zs5aniimmia6827pq4710fllmh93";
+    armv7l-linux = "16l3dkkklfb1l9jmkymsbyxarjbkfl72bpmdmxhv72jf24n025qg";
+    aarch64-linux = "08vrbybcq68vxwac5cwfcpnnzph2mk1njhq274jg7n1wmd174jnd";
+    x86_64-darwin = "19w8w6hr5gdpw0blkmqgv3lcz3gvk4vz3cspkvimi9244ffv3r56";
+    aarch64-darwin = "0c8pd9dhz40iy62vk1lg3lk7hzga74zyllfkx22wjixi2hi06yvc";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.17.0/unirtm_Linux_i386.tar.gz";
-    x86_64-linux = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.17.0/unirtm_Linux_x86_64.tar.gz";
-    armv7l-linux = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.17.0/unirtm_Linux_armv7.tar.gz";
-    aarch64-linux = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.17.0/unirtm_Linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.17.0/unirtm_Darwin_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.17.0/unirtm_Darwin_arm64.tar.gz";
+    i686-linux = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.25.2/unirtm_Linux_i386.tar.gz";
+    x86_64-linux = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.25.2/unirtm_Linux_x86_64.tar.gz";
+    armv7l-linux = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.25.2/unirtm_Linux_armv7.tar.gz";
+    aarch64-linux = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.25.2/unirtm_Linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.25.2/unirtm_Darwin_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/snowdreamtech/UniRTM/releases/download/v0.25.2/unirtm_Darwin_arm64.tar.gz";
   };
   sourceRootMap = {
     i686-linux = "unirtm_Linux_i386";
@@ -36,7 +36,7 @@ let
 in
 stdenvNoCC.mkDerivation {
   pname = "unirtm";
-  version = "0.17.0";
+  version = "0.25.2";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
