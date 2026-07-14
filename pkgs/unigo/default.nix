@@ -9,21 +9,21 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    i686-linux = "0a24dxlblg01fbq14fg2bj0m51iq6pb261f6c091pkykfd7hmqq3";
-    x86_64-linux = "15i522ap7h94hy4gfznqjpnhynl8vwh6awmmp6d7z5hqk1vqjz13";
-    armv7l-linux = "11cw3c7j0v2rlgc5s0accsbmixrny7csagxi3hnbvcrfmbylpqcm";
-    aarch64-linux = "1bqxy3fyd3fygbr1q5mfah376y6zh7nszn4yvrac00hq9x365p4f";
-    x86_64-darwin = "03hvkg5szhagnd20r7sjz8hv12fci2zx29xicx1ygzvzp19q6klq";
-    aarch64-darwin = "1nq5hjgsm0v4hfzylvcqmzv2bq73n6x8azih0fcz2z3jz9n15nnb";
+    i686-linux = "1mhbja5wmzpgyk50sdgghifk4a45c4qzkmpkd5a9jk5ys8ivq5zp";
+    x86_64-linux = "10c2vzli8m6czmmxyb65d3lyyrzpazrjxhnljjfsfkh0lx2839i7";
+    armv7l-linux = "04a0rjnc37j7767cgfhg0fj6g41lynbfyfh47awvb6bab6jv06z1";
+    aarch64-linux = "18z7clfnla1ggj4hpdb9yc3l3sq109n7yjdai2nmph2qpgiscnrv";
+    x86_64-darwin = "08hfspl8d3d1ky4l0fja1di0w2awbwgcf420s7lsa9mvrg60629g";
+    aarch64-darwin = "1hif1dali0606d1n836ixivnyap78kfay4ylf44x333pb3vp38q3";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.4/unigo_Linux_i386.tar.gz";
-    x86_64-linux = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.4/unigo_Linux_x86_64.tar.gz";
-    armv7l-linux = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.4/unigo_Linux_armv7.tar.gz";
-    aarch64-linux = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.4/unigo_Linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.4/unigo_Darwin_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.4/unigo_Darwin_arm64.tar.gz";
+    i686-linux = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.5/unigo_Linux_i386.tar.gz";
+    x86_64-linux = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.5/unigo_Linux_x86_64.tar.gz";
+    armv7l-linux = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.5/unigo_Linux_armv7.tar.gz";
+    aarch64-linux = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.5/unigo_Linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.5/unigo_Darwin_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/snowdreamtech/unigo/releases/download/v0.0.5/unigo_Darwin_arm64.tar.gz";
   };
   sourceRootMap = {
     i686-linux = "unigo_Linux_i386";
@@ -36,7 +36,7 @@ let
 in
 stdenvNoCC.mkDerivation {
   pname = "unigo";
-  version = "0.0.4";
+  version = "0.0.5";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
