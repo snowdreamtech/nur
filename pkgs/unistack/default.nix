@@ -9,21 +9,21 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    i686-linux = "1bb5fwqfmlrja0241k4q8rz9g3jcp7wawfzvqjdq52i3wpq890lh";
-    x86_64-linux = "1zj9wn7qps24kksaix8idgmb8p9qqm10krlwzx2h3iy4gaqxm56q";
-    armv7l-linux = "02bdhz9gcdb63rqq3pcddjvdx7wrrm0gsrsrwvj1w9r8ca130jqi";
-    aarch64-linux = "1y61z646r9k28bkwlgy3gijky6m4gijf3n52n47isq6niamhzbk3";
-    x86_64-darwin = "0bzdzpdap78d96rpmkpzwdx61xffdw0wabjhbr2dyav7r5ms7qgx";
-    aarch64-darwin = "10g505waav27xakswb3n0ll0id1cc78ib96wiprb63wkd2wyqy4z";
+    i686-linux = "1hi5vxkcwhplxj3cci92x2gz3bxlj0xjp8rvsjlzranvhl8vg96j";
+    x86_64-linux = "0fgxsqlkcpbp1jhfgglgq01nncr88cnip3bjz3nyqcm1kbi0rf6c";
+    armv7l-linux = "0w2bf0yk82gvikj84n7snkhksfpk52yhg3i9cg3jpdkh844xy8m2";
+    aarch64-linux = "1g1whvay3nrrgmx8dafv6ffvyzr52r8a217xhblhwh4i1ci257m1";
+    x86_64-darwin = "14ggaaj7d0pmc6j2cwsf2xraaqf57f50v5vza998rp123xnm5pik";
+    aarch64-darwin = "00253v1scv15g7x8fg9zf0na07rx7d1b4xqk24cs9z8glr8zwzw1";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/snowdreamtech/unistack/releases/download/v0.1.1/unistack_Linux_i386.tar.gz";
-    x86_64-linux = "https://github.com/snowdreamtech/unistack/releases/download/v0.1.1/unistack_Linux_x86_64.tar.gz";
-    armv7l-linux = "https://github.com/snowdreamtech/unistack/releases/download/v0.1.1/unistack_Linux_armv7.tar.gz";
-    aarch64-linux = "https://github.com/snowdreamtech/unistack/releases/download/v0.1.1/unistack_Linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/snowdreamtech/unistack/releases/download/v0.1.1/unistack_Darwin_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/snowdreamtech/unistack/releases/download/v0.1.1/unistack_Darwin_arm64.tar.gz";
+    i686-linux = "https://github.com/snowdreamtech/unistack/releases/download/v0.2.0/unistack_Linux_i386.tar.gz";
+    x86_64-linux = "https://github.com/snowdreamtech/unistack/releases/download/v0.2.0/unistack_Linux_x86_64.tar.gz";
+    armv7l-linux = "https://github.com/snowdreamtech/unistack/releases/download/v0.2.0/unistack_Linux_armv7.tar.gz";
+    aarch64-linux = "https://github.com/snowdreamtech/unistack/releases/download/v0.2.0/unistack_Linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/snowdreamtech/unistack/releases/download/v0.2.0/unistack_Darwin_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/snowdreamtech/unistack/releases/download/v0.2.0/unistack_Darwin_arm64.tar.gz";
   };
   sourceRootMap = {
     i686-linux = "unistack_Linux_i386";
@@ -36,7 +36,7 @@ let
 in
 stdenvNoCC.mkDerivation {
   pname = "unistack";
-  version = "0.1.1";
+  version = "0.2.0";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
